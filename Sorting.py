@@ -33,6 +33,17 @@ for rows2 in reader2:
     #print (ngbhd[latlon2])
     locations.append(ngbhd[latlon2])
 locationDictionary = Counter(locations)
-for (key, value) in locationDictionary.iteritems():
-    print (key + ": " + str(value))
+#for (key, value) in locationDictionary.iteritems():
+#    print (key + ": " + str(value))
+
+
+#Output onto csv file
+with open('output.csv','wb') as csvfile:
+          
+    writer = csv.writer(csvfile)
+    for key, value in locationDictionary.items():
+        writer.writerow([key, value])
+        
+        
+        
 
